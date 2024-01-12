@@ -1,0 +1,59 @@
+hbstudent@HBs-MacBook-Pro assessment-6 % npm run test
+
+assessment-qa-devops@1.0.0 test
+jest
+
+ PASS  tests/shuffle.test.js
+ FAIL  ./sum.test.js
+  ● Test suite failed to run
+
+    Cannot find module './sum' from 'sum.test.js'
+
+    However, Jest was able to find:
+        './sum.test.js'
+
+    You might want to include a file extension in your import, or update your 'moduleFileExtensions', which is currently ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'].
+
+    See https://jestjs.io/docs/configuration#modulefileextensions-arraystring
+
+1 | const sum = require('./sum');
+        |                             ^
+      2 |
+      3 | test('adds 1 + 2 to equal 3', () => {
+      4 |   expect(sum(1, 2)).toBe(3);
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/resolver.js:427:11)
+      at Object.<anonymous> (sum.test.js:1:29)
+
+ FAIL  tests/duelDuo.test.js
+  ● Duel Duo tests › page loads with title
+
+    WebDriverError: unknown error: net::ERR_CONNECTION_REFUSED
+      (Session info: chrome=120.0.6099.109)
+
+      13 | describe("Duel Duo tests", () => {
+      14 |   test("page loads with title", async () => {
+15 |     await driver.get("http://localhost:8000");
+         |     ^
+      16 |     await driver.wait(until.titleIs("Duel Duo"), 1000);
+      17 |   });
+      18 | });
+
+      at Object.throwDecodedError (node_modules/selenium-webdriver/lib/error.js:524:15)
+      at parseHttpResponse (node_modules/selenium-webdriver/lib/http.js:601:13)
+      at Executor.execute (node_modules/selenium-webdriver/lib/http.js:529:28)
+      at Driver.execute (node_modules/selenium-webdriver/lib/webdriver.js:745:17)
+      at Object.<anonymous> (tests/duelDuo.test.js:15:5)
+
+Test Suites: 2 failed, 1 passed, 3 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        2.623 s, estimated 3 s
+Ran all test suites.
+hbstudent@HBs-MacBook-Pro assessment-6 %
+Configuring Jest · Jest
+The Jest philosophy is to work great by default, but sometimes you just need more configuration power.
+
+[12:03 PM]
+
+Te
